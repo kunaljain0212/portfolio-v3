@@ -13,7 +13,10 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function BlogPost({ params }: { params: { slug: string } }) {
+export default async function BlogPost(props0: {
+  params: Promise<{ slug: string }>;
+}) {
+  const params = await props0.params;
   const post = getPostBySlug(params.slug, ["title", "date", "content"]);
 
   if (!post) {
@@ -34,19 +37,19 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
       <div className="prose prose-invert max-w-none">
         <ReactMarkdown
           components={{
-            code({ node, inline, className, children, ...props }) {
+            code(props) {
+              const { children, className, ...rest } = props;
               const match = /language-(\w+)/.exec(className || "");
-              return !inline && match ? (
+              return match ? (
                 <SyntaxHighlighter
-                  style={atomDark}
-                  language={match[1]}
                   PreTag="div"
-                  {...props}
+                  language={match[1]}
+                  style={atomDark}
                 >
                   {String(children).replace(/\n$/, "")}
                 </SyntaxHighlighter>
               ) : (
-                <code className={className} {...props}>
+                <code {...rest} className={className}>
                   {children}
                 </code>
               );

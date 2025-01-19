@@ -1,23 +1,22 @@
-import React from 'react'
-import { motion } from 'framer-motion'
+import React from "react";
+import { motion } from "framer-motion";
 
 interface BentoCardProps {
-  children: React.ReactNode
-  className?: string
+  children: React.ReactNode;
+  className?: string;
 }
 
-const BentoCard: React.FC<BentoCardProps> = ({ children, className = '' }) => (
+const BentoCard: React.FC<BentoCardProps> = ({ children, className = "" }) => (
   <motion.div
     className={`bg-gray-800 rounded-xl p-4 ${className}`}
     whileHover={{ scale: 1.05 }}
     transition={{ type: "spring", stiffness: 300, damping: 10 }}
     initial={{ opacity: 0, scale: 0.9 }}
     animate={{ opacity: 1, scale: 1 }}
-    transition={{ duration: 0.5 }}
   >
     {children}
   </motion.div>
-)
+);
 
 export default function BentoGrid() {
   return (
@@ -38,7 +37,7 @@ export default function BentoGrid() {
         </BentoCard>
         <BentoCard>
           <h3 className="text-lg mb-2">Blog</h3>
-          <p>Latest post: "The Future of Web Development"</p>
+          <p>Latest post: The Future of Web Development</p>
         </BentoCard>
         <BentoCard className="col-span-2">
           <h3 className="text-lg mb-2">Current Project</h3>
@@ -50,6 +49,5 @@ export default function BentoGrid() {
         </BentoCard>
       </div>
     </section>
-  )
+  );
 }
-
