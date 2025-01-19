@@ -12,7 +12,17 @@ const nextConfig: NextConfig = {
       {
         source: "/life-in-flashcards/",
         destination:
-          "https://life-in-flashcards.kunaljain.space/life-in-flashcards",
+          "https://life-in-flashcards.kunaljain.space/life-in-flashcards/",
+      },
+      {
+        source: "/life-in-flashcards/:path*/",
+        destination:
+          "https://life-in-flashcards.kunaljain.space/life-in-flashcards/:path*",
+      },
+      {
+        source: "/life-in-flashcards/:path*",
+        destination:
+          "https://life-in-flashcards.kunaljain.space/life-in-flashcards/:path*",
       },
     ];
   },
