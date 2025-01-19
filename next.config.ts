@@ -6,11 +6,13 @@ const nextConfig: NextConfig = {
     return [
       {
         source: "/life-in-flashcards",
-        destination: "https://life-in-flashcards.kunaljain.space",
+        destination:
+          "https://life-in-flashcards.kunaljain.space/life-in-flashcards",
       },
       {
         source: "/life-in-flashcards/",
-        destination: "https://life-in-flashcards.kunaljain.space/",
+        destination:
+          "https://life-in-flashcards.kunaljain.space/life-in-flashcards",
       },
     ];
   },
