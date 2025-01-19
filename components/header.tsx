@@ -11,7 +11,7 @@ export default function Header() {
       <h1 className="text-xl font-medium mb-4 sm:mb-0">Kunal Jain</h1>
       {pathname === "/" && (
         <Link
-          href="https://life-in-flashcards.vercel.app/"
+          href="/life-in-flashcards"
           target="_blank"
           rel="noopener noreferrer"
           className="text-sm bg-green-500 text-black px-4 py-2 rounded-full hover:bg-green-400 transition-colors"
